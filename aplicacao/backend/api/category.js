@@ -89,7 +89,7 @@ module.exports = app => {
         app.db('categories')
             .where({ id: req.params.id })
             .first()
-            .ten(category => res.json(category))
+            .then(category => res.json(category))
             .catch(err => res.status(500).send(err))
     }
 
